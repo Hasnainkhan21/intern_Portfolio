@@ -10,7 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fontsource/jost": "^5.2.6",
+    "@fontsource/syne": "^5.2.6",
     "@tailwindcss/vite": "^4.1.11",
+    "axios": "^1.10.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-hook-form": "^7.59.0",

@@ -4,7 +4,7 @@ import { SiTailwindcss, SiMongodb, SiExpress, SiGithub } from 'react-icons/si';
 
 const TechStack = () => {
   return (
-    <section className="w-full py-10 bg-gray-50">
+    <section className="w-full py-10 mt-15 bg-gray-50">
       <div className="max-w-6xl mx-auto px-4 text-center">
 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6 md:gap-10 justify-items-center text-3xl sm:text-4xl text-gray-700">
           <FaHtml5 title="HTML5" className="hover:text-orange-500 transition" />
