@@ -3,6 +3,7 @@ import { usePortfolio } from '../Context/PortfolioContext';
 import { useNavigate } from 'react-router-dom';
 import '@fontsource/jost/400.css';
 import '@fontsource/syne/600.css';
+import { FaArrowRight } from 'react-icons/fa6';
 
 const Hero2 = () => {
     const { portfolio, loading } = usePortfolio();
@@ -55,7 +56,7 @@ const Hero2 = () => {
             onClick={handleClick}
             className="bg-orange-500 text-white px-8 py-3 cursor-pointer rounded-full hover:bg-transparent hover:text-black hover:border-orange-500 border-2 transition"
           >
-            Hire Me
+            Hire Me <FaArrowRight className="inline ml-2" />
           </button>
         </div>
       </div>

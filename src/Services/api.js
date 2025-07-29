@@ -36,3 +36,15 @@ export const postMessage = async (formData) => {
     throw error;
   }
 };
+
+//get Messages
+
+export const getMessages = async () => {
+  try {
+    const resp = await axios.get(`${BASE_URL}/getmessages`);
+    return resp.data; 
+  } catch (error) {
+    console.log('Error in getMessages:', error.message);
+    return []; 
+  }
+};

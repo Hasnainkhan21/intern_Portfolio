@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaFacebook, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { FaArrowRight, FaFacebook, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import { usePortfolio } from '../Context/PortfolioContext';
 import { useNavigate } from 'react-router-dom';
 import '@fontsource/jost/400.css';
@@ -24,7 +24,7 @@ const Hero = () => {
         {/* Left Side - Text */}
         <div className="w-full md:w-1/2 p-5 sm:p-8 md:p-10 space-y-4 md:space-y-5">
           <p className="text-orange-500 text-2xl sm:text-3xl font-[jost]">Hello, I'm</p>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl text-gray-800 font-[cursive]">{name}</h1>
+          <h1 className="text-3xl sm:text-3xl md:text-4xl text-gray-700 font-[cursive]">{name}</h1>
           <p className="text-base sm:text-lg text-gray-700 font-[jost]">
             A Passionate {role} from <span className="text-green-400">Malakand</span>
           </p>
@@ -36,7 +36,7 @@ const Hero = () => {
               onClick={handleClick}
               className="bg-orange-500 cursor-pointer text-white px-6 py-2 rounded-full hover:bg-orange-600 transition"
             >
-              About Me
+              About Me <FaArrowRight className="inline ml-2" />
             </button>
             <div className="flex space-x-4 mt-2 sm:mt-0">
               <a href="https://www.facebook.com/profile.php?id=100019902694047" target="_blank" rel="noopener noreferrer">

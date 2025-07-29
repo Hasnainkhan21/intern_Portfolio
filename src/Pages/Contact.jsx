@@ -5,15 +5,23 @@ import { postMessage } from '../Services/api';
 import { FaGithub, FaEnvelope } from 'react-icons/fa';
 import Footer from '../Components/Footer';
 
+// MUI Components
+import Snackbar from '@mui/material/Snackbar';
+import MuiAlert from '@mui/material/Alert';
+
+// Custom Alert component for Snackbar
+const Alert = React.forwardRef(function Alert(props, ref) {
+  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
+
 const Contact = () => {
   const { portfolio } = usePortfolio();
 
-  // If portfolio is not loaded yet
-  if (!portfolio) {
-    return <div className="text-center mt-10 text-lg font-semibold">Loading contact info...</div>;
-  }
-
-  const { email } = portfolio;
+  const [snackbar, setSnackbar] = React.useState({
+    open: false,
+    message: '',
+    severity: 'success',
+  });
 
   const {
     register,
@@ -29,12 +37,18 @@ const Contact = () => {
         email: data.Email,
         message: data.Message
       });
-      alert("✅ Message sent successfully!");
+      setSnackbar({ open: true, message: '✅ Message sent successfully!', severity: 'success' });
       reset();
     } catch (error) {
-      alert("❌ Failed to send message.");
+      setSnackbar({ open: true, message: '❌ Failed to send message.', severity: 'error' });
     }
   }
+
+  if (!portfolio) {
+    return <div className="text-center mt-10 text-lg font-semibold">Loading contact info...</div>;
+  }
+
+  const { email } = portfolio;
 
   return (
     <>
@@ -98,7 +112,9 @@ const Contact = () => {
                 {...register("Message", { required: true, maxLength: 500 })}
               ></textarea>
               {errors.Message && (
-                <span className="text-red-500 text-xs">This field is required and should not exceed 500 characters.</span>
+                <span className="text-red-500 text-xs">
+                  This field is required and should not exceed 500 characters.
+                </span>
               )}
             </div>
 
@@ -116,12 +132,11 @@ const Contact = () => {
 
       {/* Buttons */}
       <div className="mb-10 text-center flex flex-col sm:flex-row justify-center items-center gap-6">
-
         <a
           href={`mailto:${email}`}
           className="inline-flex items-center gap-2 bg-orange-500 text-white px-6 py-3 rounded-full shadow-md hover:bg-orange-600 transition text-lg"
         >
-         <FaEnvelope className="text-xl" />
+          <FaEnvelope className="text-xl" />
           Email Me
         </a>
 
@@ -135,6 +150,18 @@ const Contact = () => {
           View GitHub
         </a>
       </div>
+
+      {/* Snackbar Alert */}
+      <Snackbar
+        open={snackbar.open}
+        autoHideDuration={3000}
+        onClose={() => setSnackbar({ ...snackbar, open: false })}
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+      >
+        <Alert onClose={() => setSnackbar({ ...snackbar, open: false })} severity={snackbar.severity}>
+          {snackbar.message}
+        </Alert>
+      </Snackbar>
 
       <Footer />
     </>

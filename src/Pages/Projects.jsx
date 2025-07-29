@@ -6,9 +6,8 @@ import Footer from '../Components/Footer';
 
 
 const Projects = () => {
-  const { portfolio, loading } = usePortfolio();
-  const {email} = portfolio;
 
+   const { portfolio, loading } = usePortfolio();
   if (loading) return <div className="text-center py-20">Loading...</div>;
   if (!portfolio) return <div className="text-center py-20 text-red-500">Failed to load projects.</div>;
 
