@@ -58,7 +58,7 @@ const Hero = () => {
         {/* Right Side - Image */}
         <div className="w-full md:w-1/2 flex justify-center items-center p-5 sm:p-8 md:p-10">
           <img
-            src={`http://localhost:3001/${profileImage}`}
+            src={`https://interportfolioserver-production.up.railway.app/${profileImage}`}
             alt="Profile"
             className="w-40 h-40 sm:w-56 sm:h-56 md:w-64 md:h-64 rounded-full object-cover border-4 border-orange-400 shadow-md"
           />

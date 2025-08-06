@@ -7,7 +7,7 @@ const ProjectCard = ({ title, description, technologies, image, link }) => {
       {/* Image with hover zoom */}
       <div className="overflow-hidden">
         <img
-          src={`http://localhost:3001/${image}`}
+          src={`https://interportfolioserver-production.up.railway.app/${image}`}
           alt={title}
           className="h-48 w-full object-cover transform group-hover:scale-110 transition-transform duration-500"
         />

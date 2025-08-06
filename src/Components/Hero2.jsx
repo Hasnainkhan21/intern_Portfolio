@@ -28,7 +28,7 @@ const Hero2 = () => {
 
   {/* Profile Image */}
   <img
-    src={`http://localhost:3001/${coverImage}`}
+    src={`https://interportfolioserver-production.up.railway.app/${coverImage}`}
     alt="Profile"
     className="w-full h-full object-cover rounded-xl transition-transform duration-500 ease-in-out group-hover:rotate-[-6deg] group-hover:scale-107"
   />
