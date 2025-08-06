@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import '@fontsource/jost/400.css';
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false); // State to manage mobile menu visibility
+  const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
