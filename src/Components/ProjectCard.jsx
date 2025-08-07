@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { BASE_URL } from '../Services/api';
 const ProjectCard = ({ title, description, technologies, image, link }) => {
   return (
     <div className="bg-white shadow-md hover:shadow-xl hover:scale-[1.02] transition-transform duration-300 rounded-xl overflow-hidden flex flex-col border border-gray-200 group">
@@ -7,7 +7,7 @@ const ProjectCard = ({ title, description, technologies, image, link }) => {
       {/* Image with hover zoom */}
       <div className="overflow-hidden">
         <img
-          src={`https://interportfolioserver-production.up.railway.app/${image}`}
+          src={`${BASE_URL}/${image}`}
           alt={title}
           className="h-48 w-full object-cover transform group-hover:scale-110 transition-transform duration-500"
         />

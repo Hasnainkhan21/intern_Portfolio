@@ -15,7 +15,7 @@ const Navbar = () => {
       {/* Logo and Mobile Menu Button */}
       <div className="flex justify-between items-center w-full md:w-auto">
         <Link to="/" className="text-2xl sm:text-3xl font-[syne] tracking-wide text-orange-500 select-none">
-          Nain0
+          Naino
         </Link>
 
         {/* Hamburger Icon for Mobile */}

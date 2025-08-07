@@ -3,13 +3,19 @@ import React from 'react';
 import { usePortfolio } from '../Context/PortfolioContext';
 import ProjectCard from '../Components/ProjectCard';
 import Footer from '../Components/Footer';
+import { CircularProgress } from '@mui/material';  // ✅ MUI loader
 
 
 const Projects = () => {
 
-   const { portfolio, loading } = usePortfolio();
-  if (loading) return <div className="text-center py-20">Loading...</div>;
-  if (!portfolio) return <div className="text-center py-20 text-red-500">Failed to load projects.</div>;
+   const { portfolio} = usePortfolio();
+    if (!portfolio) {
+      return (
+        <div className="w-full min-h-[400px] flex items-center justify-center bg-white">
+          <CircularProgress color="warning" />
+        </div>
+      );
+    }
 
   return (
     <>

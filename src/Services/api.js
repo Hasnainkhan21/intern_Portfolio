@@ -1,7 +1,7 @@
 // src/Services/api.js
 import axios from 'axios';
 
-const BASE_URL = 'https://interportfolioserver-production.up.railway.app';
+export const BASE_URL = 'https://interportfolioserver-production.up.railway.app';
 
 export const getPortfolioData = async () => {
   try {

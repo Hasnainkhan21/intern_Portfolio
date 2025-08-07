@@ -5,7 +5,6 @@ const PortfolioContext = createContext();
 
 export const PortfolioProvider = ({ children }) => {
   const [portfolio, setPortfolio] = useState(null);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchPortfolio = async () => {
@@ -14,8 +13,6 @@ export const PortfolioProvider = ({ children }) => {
         setPortfolio(data);
       } catch (error) {
         console.error('❌ Failed to fetch portfolio data:', error);
-      } finally {
-        setLoading(false);
       }
     };
 
@@ -23,7 +20,7 @@ export const PortfolioProvider = ({ children }) => {
   }, []);
 
   return (
-    <PortfolioContext.Provider value={{ portfolio, loading }}>
+    <PortfolioContext.Provider value={{ portfolio}}>
       {children}
     </PortfolioContext.Provider>
   );

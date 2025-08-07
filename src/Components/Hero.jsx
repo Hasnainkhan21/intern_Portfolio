@@ -4,17 +4,24 @@ import { usePortfolio } from '../Context/PortfolioContext';
 import { useNavigate } from 'react-router-dom';
 import '@fontsource/jost/400.css';
 import '@fontsource/syne/600.css';
+import { CircularProgress } from '@mui/material';  // ✅ MUI loader
+import { BASE_URL } from '../Services/api';
 
 const Hero = () => {
-  const { portfolio, loading } = usePortfolio();
+  const { portfolio }= usePortfolio();
   const navigate = useNavigate();
 
   const handleClick = () => {
     navigate('/about');
   };
 
-  if (loading) return <div>Loading...</div>;
-  if (!portfolio) return <div>Error loading portfolio</div>;
+  if (!portfolio) {
+    return (
+      <div className="w-full min-h-[400px] flex items-center justify-center bg-white">
+        <CircularProgress color="warning" />
+      </div>
+    );
+  }
 
   const { name, role, profileImage } = portfolio;
 
@@ -58,7 +65,7 @@ const Hero = () => {
         {/* Right Side - Image */}
         <div className="w-full md:w-1/2 flex justify-center items-center p-5 sm:p-8 md:p-10">
           <img
-            src={`https://interportfolioserver-production.up.railway.app/${profileImage}`}
+            src={`${BASE_URL}/${profileImage}`}
             alt="Profile"
             className="w-40 h-40 sm:w-56 sm:h-56 md:w-64 md:h-64 rounded-full object-cover border-4 border-orange-400 shadow-md"
           />
