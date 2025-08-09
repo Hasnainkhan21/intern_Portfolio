@@ -19,7 +19,7 @@ function App() {
   <Route path="/contact" element={<Contact />} />
 
   {/* Hidden Admin Route */}
-  <Route path="/messages" element={<Messages />} />
+  <Route path="/peghamat" element={<Messages />} />
 </Routes>
 
       </Router>

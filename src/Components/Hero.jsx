@@ -31,11 +31,11 @@ const Hero = () => {
         {/* Left Side - Text */}
         <div className="w-full md:w-1/2 p-5 sm:p-8 md:p-10 space-y-4 md:space-y-5">
           <p className="text-orange-500 text-2xl sm:text-3xl font-[jost]">Hello, I'm</p>
-          <h1 className="text-3xl sm:text-3xl md:text-4xl text-gray-700 font-[cursive]">{name}</h1>
+          <h1 className="text-3xl sm:text-3xl md:text-4xl text-gray-700 font-[syne]">{name}</h1>
           <p className="text-base sm:text-lg text-gray-700 font-[jost]">
             A Passionate {role} from <span className="text-green-400">Malakand</span>
           </p>
-          <p className="text-sm sm:text-base md:text-[17px] text-gray-600 font-[syne]">
+          <p className="text-sm sm:text-base md:text-[17px] text-gray-600 font-[jost]">
             I’m a {role} passionate about building clean, responsive web apps and delivering modern digital experiences.
           </p>
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mt-4 sm:mt-6 space-y-3 sm:space-y-0">
