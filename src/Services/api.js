@@ -1,7 +1,7 @@
 // src/Services/api.js
 import axios from 'axios';
 
-export const BASE_URL = 'https://interportfolioserver-production.up.railway.app';
+export const BASE_URL = 'https://portfolioserver-fe99cf3l0-hasnainkhan21s-projects.vercel.app';
 
 export const getPortfolioData = async () => {
   try {
