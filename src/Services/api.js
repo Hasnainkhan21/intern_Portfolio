@@ -7,7 +7,7 @@ export const getPortfolioData = async () => {
   try {
     const response = await axios.get(`${BASE_URL}/getdata`);
 
-
+    console.log('✅ Fetched portfolio data:', response.data);
     const { user, projects } = response.data;
 
     return  {
